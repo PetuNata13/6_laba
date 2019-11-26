@@ -1,0 +1,168 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+
+    /*Практическое задание 1*/
+
+    console.log('Практическое задание 1');
+
+/*1:*/
+console.log("№1:");
+function degreeFunction(celsius) {
+    console.log("По Фаренгейту: " + (9 / 5) * celsius + 32)
+}
+console.log("По Цельсия: " + 36);
+degreeFunction(36);
+
+/*2:*/
+console.log("№2:");
+let name = 'Василий';
+let admin = name;
+console.log(admin);
+
+/*3:*/
+console.log("№3:");
+console.log(10 + 10 + "10");
+console.log(10 + "10" + 10);
+console.log(10 + 10 + +"10");
+console.log(10 / -"");
+console.log(10 / +"2,5");
+
+/*Практическое задание 2*/
+console.log('Практическое задание 2');
+
+/*3:*/
+console.log("№3:");
+
+function result(a, b) {
+    if (a >= 0 && b >= 0) {
+        console.log(a - b);
+    } else if (a < 0 && b < 0) {
+        console.log(a * b);
+    } else {
+        console.log(a + b);
+    }
+}
+result(8, -2);
+
+/*4:*/
+function add(a, b) {
+    console.log(a + b)
+}
+
+function sub(a, b) {
+    return(a - b)
+}
+
+function div(a, b) {
+    return(a / b)
+}
+
+function mul(a, b) {
+    return(a * b)
+}
+
+/*5:*/
+console.log('№5');
+
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case 'сложение':
+            return add(arg1, arg2);
+        case 'вычитание':
+            return sub(arg1, arg2);
+        case 'умножение':
+            return mul(arg1, arg2);
+        case 'деление':
+            return div(arg1, arg2);
+    }
+}
+
+mathOperation(6, 2, "сложение");
+
+/*6:*/
+console.log('№6');
+let val = 2;
+let pow = 4;
+
+function power(val, pow) {
+    console.log((pow === 1) ? val : (val * Math.pow(val, pow - 1)));
+}
+
+power(val, pow);
+
+/*7:*/
+function password() {
+    let password = document.getElementById("password").value;
+    if (password.length >= 3 && password.length <= 12) {
+        if (password.includes('&') || password.includes('$') || password.includes('%') || password.includes('*')) {
+            if (password.lastIndexOf("z") === password.length - 1 && password.indexOf("q") === 0) {
+                alert("Корректный пароль")
+            } else {
+                alert("Некорректный пароль")
+            }
+        } else {
+            alert("Некорректный пароль")
+        }
+    } else {
+        alert("Некорректный пароль")
+    }
+
+}
+
+/*Практическое задание 3*/
+/*1:*/
+console.log('Практическое задание 3');
+console.log('№1')
+let a = [
+    [{name: "Mary", age: 23}, {name: "Mike", age: 45}, {name: "Nick", age: 11}],
+    [{name: "Adam", age: 56}, {name: "Sara", age: 21}, {name: "Don", age: 22}],
+    [{name: "Karl", age: 34}, {name: "Marta", age: 76}, {name: "John", age: 19}]
+];
+for (let i in a) {
+    let b = a[i];
+    console.log(b)
+}
+
+/*2:*/
+let product = [
+    {name: "Bike Foxx", price: 16000},
+    {name: "Bike Stels", price: 12000},
+    {name: "Bike Forword", price: 11000},
+    {name: "Bike Stinger", price: 13000},
+];
+
+function countBasketPrice(product) {
+    let sum = 0;
+    console.log('№2');
+    for (let i in product) {
+        sum += product[i].price
+    }
+    console.log("Стоимость покупки: " + sum)
+}
+countBasketPrice(product);
+
+/*3:*/
+console.log('№3');
+for (let i = 0; i < 10; console.log(i++)) ;
+
+/*4:*/
+console.log('№4');
+let x = '*';
+for (let i = 0; i <= 20; i++) {
+    console.log(x);
+    x = x + '*'
+}
+
+</script>
+<div class="wrap-column">
+    <h3>Практическое задание №2</h3>
+<h3>Задание 7</h3>
+<label>Ввеедите пароль:<input type="text" id="password"></label>
+    <input type="button" value="Проверка пароля" onclick="password()">
+    </div>
+
+    </body>
